@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DostavaHrane.Models.Jelo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Jela</h1>
+
+<p>
+    <a asp-action="Create">Dodaj novo jelo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cijena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restoran)
+            </th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restoran.Naziv)
+            </td>
+                
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Uredi</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Detalji</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Izbriši</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

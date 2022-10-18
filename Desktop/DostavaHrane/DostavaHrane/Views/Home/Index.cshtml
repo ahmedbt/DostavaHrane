@@ -1,0 +1,19 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.HtmlHelper
+
+@{
+    ViewData["Title"] = "Početna";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dobro došli</h1>
+    <p>Web aplikacija za online narudžbu hrane.</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            @Html.ActionLink("Predloži jelo", "Random", "Jeloes", new object { }, new { @class = "btn btn-outline-primary btn-lg" })
+        </div>
+    </div>
+</div>
+

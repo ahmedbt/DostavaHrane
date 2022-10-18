@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DostavaHrane.Models.Jelo>
+
+<p class="h4">Predlažemo sljedeće jelo</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Naziv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cijena)
+            </th>
+            <th>
+               Restoran
+            </th>
+            <th>
+               Adresa
+            </th>
+            <th>
+               Telefon
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naziv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cijena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restoran.Naziv)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restoran.Adresa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Restoran.Telefon)
+                </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
